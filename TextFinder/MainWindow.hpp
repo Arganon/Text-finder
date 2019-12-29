@@ -9,6 +9,11 @@
 #include "Interfaces/IPresenter.hpp"
 #include "DataStructures/DataToStartSearching.hpp"
 
+#define LINE_TWO 2
+#define LINE_THREE 3
+#define LINE_FOUR 4
+#define LINE_FIVE 5
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -20,33 +25,34 @@ class QProgressBar;
 class QPlainTextEdit;
 
 namespace widgetPositionConstants {
-    static constexpr int m_Margin {42/2};
-    static constexpr int m_MainWindWidth {42*15};
-    static constexpr int m_MainWindHight {42*10};
-    static constexpr int m_MinDistncBtwnWidgets {42};
-    static constexpr int m_ButtonWidth {42*2+42/2};
-    static constexpr int m_ButtonHight {42-10};
-    static constexpr int m_LableWidth {42*2};
-    static constexpr int m_LableHight {42-10};
+    constexpr int m_Margin {42/2};
+    constexpr int m_MarginBtwnThreeComponents {42 + 42/2};
+    constexpr int m_MainWindWidth {42*15};
+    constexpr int m_MainWindHight {42*10};
+    constexpr int m_MinDistncBtwnWidgets {42};
+    constexpr int m_ButtonWidth {42*2+42/2};
+    constexpr int m_ButtonHight {42-10};
+    constexpr int m_LableWidth {42*2};
+    constexpr int m_LableHight {42-10};
 
-    static constexpr int distanceFromTopBound = m_Margin + m_ButtonHight + m_MinDistncBtwnWidgets;
-    static constexpr int distanceFromLeftBoundForLineEdit = m_Margin + m_LableWidth;
+    constexpr int distanceFromTopBound = m_Margin + m_ButtonHight + m_MinDistncBtwnWidgets;
+    constexpr int distanceFromLeftBoundForLineEdit = m_Margin + m_LableWidth;
 
-    static std::map<QString, QPoint> m_ValToCalculateWidgPos {
+    const std::map<QString, QPoint> m_ValToCalculateWidgPos {
         {"m_ButtonStop", {m_ButtonWidth + m_Margin, m_Margin} },
         {"m_ButtonStart", {m_ButtonWidth + m_Margin, m_Margin + m_MinDistncBtwnWidgets} },
-        {"m_ButtonPause", {m_ButtonWidth + m_Margin, m_Margin + m_MinDistncBtwnWidgets*2} },
-        {"m_ButtonContinue", {m_ButtonWidth + m_Margin, m_Margin + m_MinDistncBtwnWidgets*3} },
+        {"m_ButtonPause", {m_ButtonWidth + m_Margin, m_Margin + m_MinDistncBtwnWidgets*LINE_TWO} },
+        {"m_ButtonContinue", {m_ButtonWidth + m_Margin, m_Margin + m_MinDistncBtwnWidgets*LINE_THREE} },
         {"m_LabelUrl", {m_Margin, m_Margin} },
         {"m_LabelTextToFind", {m_Margin, m_Margin + m_MinDistncBtwnWidgets} },
-        {"m_LabelThreadQuantity", {m_Margin, m_Margin + m_MinDistncBtwnWidgets*2} },
-        {"m_LabelUrlQuantityToFindText", {m_Margin, m_Margin + m_MinDistncBtwnWidgets*3} },
+        {"m_LabelThreadQuantity", {m_Margin, m_Margin + m_MinDistncBtwnWidgets*LINE_TWO} },
+        {"m_LabelUrlQuantityToFindText", {m_Margin, m_Margin + m_MinDistncBtwnWidgets*LINE_THREE} },
         {"m_LineEditUrl", {distanceFromLeftBoundForLineEdit, m_Margin} },
         {"m_LineEditTextToFind", {distanceFromLeftBoundForLineEdit, m_Margin + m_MinDistncBtwnWidgets} },
-        {"m_LineEditThreadQuantity", {distanceFromLeftBoundForLineEdit, m_Margin + m_MinDistncBtwnWidgets*2} },
-        {"m_LineEditUrlQuantityToFindText", {distanceFromLeftBoundForLineEdit, m_Margin + m_MinDistncBtwnWidgets*3} },
-        {"m_ProgressBar", {m_Margin, m_Margin + m_MinDistncBtwnWidgets*4} },
-        {"m_PlainTextEdit", {m_Margin, m_Margin + m_MinDistncBtwnWidgets*5} }
+        {"m_LineEditThreadQuantity", {distanceFromLeftBoundForLineEdit, m_Margin + m_MinDistncBtwnWidgets*LINE_TWO} },
+        {"m_LineEditUrlQuantityToFindText", {distanceFromLeftBoundForLineEdit, m_Margin + m_MinDistncBtwnWidgets*LINE_THREE} },
+        {"m_ProgressBar", {m_Margin, m_Margin + m_MinDistncBtwnWidgets*LINE_FOUR} },
+        {"m_PlainTextEdit", {m_Margin, m_Margin + m_MinDistncBtwnWidgets*LINE_FIVE} }
     };
 }
 

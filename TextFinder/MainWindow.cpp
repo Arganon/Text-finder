@@ -189,7 +189,7 @@ void MainWindow::setWidgetPosition(QWidget& obj, const QPoint &point) noexcept {
 }
 
 void MainWindow::calculateLineEditWidth(const QRect &geometry) noexcept {
-    int lineEditWidth = geometry.width() - m_Margin*3 - m_ButtonWidth - m_LableWidth;
+    int lineEditWidth = geometry.width() - m_MarginBtwnThreeComponents - m_ButtonWidth - m_LableWidth;
 
     m_LineEditUrl->setFixedWidth(lineEditWidth);
     m_LineEditTextToFind->setFixedWidth(lineEditWidth);
